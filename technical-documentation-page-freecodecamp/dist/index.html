@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Technical Documentation Page (FreeCodeCamp)</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SQL Documentation</title>
+  </head>
+  <body>
+    <header>      
+      <nav id="navbar">        
+        <header>SQL Documentation</header>
+        <ul>
+          <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+          <li><a class="nav-link" href="#Syntax">Syntax</a></li>
+          <li><a class="nav-link" href="#Select_Statement">Select Statement</a></li>
+          <li><a class="nav-link" href="#Where_Statement">Where Statement</a></li>
+          <li><a class="nav-link" href="#Join_Statements">Join Statements</a></li>
+        </ul>
+      </nav>  
+    </header>
+    <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>SQL (Structured Query Language) is widely considered to be the main database language.</p>
+      <p>SQL is used with multiple Relational Database Management Systems (RDBMS). Three of the most popular are as follows:</p>
+      <ul>
+        <li>Oracle</li>
+        <li>MySQL</li>
+        <li>Microsoft SQL Server</li>
+      </ul>  
+    </section>
+    <section class="main-section" id="Syntax">
+      <header>Syntax</header>
+      <p>SQL selects records from tables through the use of SQL statements.<br><br>The following statement selects all records from the "Computer" table:</p>
+      <code>
+        SELECT * FROM Computers;
+      </code>
+      <p>All records are selected in the table by using asterisk (*).</p>
+    </section>
+    <section class="main-section" id="Select_Statement">
+      <header>Select Statement</header>
+      <p>As the name implies, a Select statement selects records in a database. The following statement selects all computer names from the Computers table:</p>
+      <code>
+        SELECT ComputerName<br>FROM Computers;
+      </code>
+      <p>By assigning names after SELECT, all records are returned for the given columns.</p>
+    </section>
+    <section class="main-section" id="Where_Statement">
+      <header>Where Statement</header>
+      <p>The Where statement returns records that meet a certain condition.<br><br>The following statement selects all computer numbers from the Computers table with a number greater than 10:</p>
+      <code>
+        SELECT ComputerNumber<br>FROM Computers<br>WHERE ComputerNumber > 10;
+      </code>
+      <p>The Where statement allows additional filtering for selecting specific records.</p>
+    </section>
+    <section class="main-section" id="Join_Statements">
+      <header>Join Statements</header>
+      <p>There are multiple types of Join statements:</p>
+      <ul>
+        <li>Inner Join: Returns all records that have matching values in both tables</li>
+        <li>Left Outer Join: Returns all records from the left table, but only the records with matching values in the right table</li>
+        <li>Right Outer Join: Returns all records from the right table, but only the records with matching values from the left table</li>
+        <li>Full Outer Join: Returns all records when there are matches in either the left or right table.</li>
+      </ul>
+      <p>The following statement selects all computer numbers with matching tickets:</p>
+      <code>
+        SELECT Computers.ComputerNumber, Tickets.TicketNumber<br>FROM Computers<br>INNER JOIN Tickets ON Computers.Department = Tickets.Department;
+      </code>
+      <p>The following statement selects all computer numbers and any ticket numbers associated with them:</p>
+      <code>
+        SELECT Computers.ComputerNumber, Tickets.TicketNumber<br>FROM Computers<br>LEFT JOIN Tickets ON Computers.Department = Tickets.Department;
+      </code>      
+    </section>
+    </main>
+    <footer>      
+    </footer>
+  </body>
+</html>
+<!-- partial -->
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
